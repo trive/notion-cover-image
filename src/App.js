@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Motion, spring} from 'react-motion';
 import Constants from './Constants';
 import State from './State';
 import Popup from './Popup';
@@ -37,11 +38,14 @@ const Logo = styled.img`
 `
 
 const Overlay = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
-  background-color: black;
-  opacity: {overlayOpacity};
+  top: 0; 
+  left: 0;
+  z-index: ${Constants.zOverlay};
+  background-color: rgba(0,0,0);
+  pointer-events: none;
 `
 
 /* App */
@@ -77,6 +81,8 @@ class App extends Component {
 
     console.debug(width);
     console.debug(height);
+    
+    var overlayOpacity = spring(this.state.isShowingPopup ? 0.15 : 0.0, Constants.SpringParameters);
     return (
       <StyledApp>
         <NavBar />
@@ -84,7 +90,10 @@ class App extends Component {
         <AddBar addCoverHandler={this.handleClickOnAddCover} />
         <Content>Travel List</Content>
         <Popup />
-        <Overlay />
+        <Motion
+        	style={{opacity: overlayOpacity}}>
+				{interpolatingStyle => <Overlay style={interpolatingStyle} />}
+		</Motion>
       </StyledApp>
     );
   }

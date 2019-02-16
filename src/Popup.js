@@ -1,4 +1,5 @@
 import React, { createRef, Component } from 'react';
+import Constants from './Constants';
 import styled from 'styled-components';
 
 
@@ -10,6 +11,7 @@ const StyledPopup = styled.div`
   height:200px;
   background-color:red;
   -webkit-overflow-scrolling: touch;
+  z-index: ${Constants.zPopup};
 `
 const PopupContent = styled.div`
   height:400px;

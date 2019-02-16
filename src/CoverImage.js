@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 const CoverImageContainer = styled.div`
   overflow: hidden;
+  z-index: ${Constants.zCoverImage};
 `
 
 const CoverImageContent = styled.img`
@@ -17,9 +18,9 @@ const CoverImageContent = styled.img`
 
 class CoverImage extends Component {
   render() {
-  	var maskHeight = this.props.showCoverImage ? 0 : Constants.CoverImageHeight;
+  	var maskHeight = spring(this.props.showCoverImage ? Constants.CoverImageHeight : 0, Constants.SpringParameters);
     return (
-    	<Motion style={{height: spring(maskHeight, Constants.SpringParameters)}}>
+    	<Motion style={{height: maskHeight}}>
 			{interpolatingStyle =>
 				<CoverImageContainer style={interpolatingStyle}>
         			<CoverImageContent src={image} />

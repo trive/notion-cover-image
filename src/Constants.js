@@ -15,6 +15,11 @@ class Constants {
     /* Dimensions */
     this.CoverImageHeight = 200;
 
+    /* z indexes */
+    this.zPopup = -1;
+    this.zCoverImage = -2;
+    this.zOverlay = -3;
+
     /* Spring */
     this.SpringStiffness = 300;
     this.SpringDamping = 30;

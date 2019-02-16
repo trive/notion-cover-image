@@ -10,7 +10,6 @@ import styled from 'styled-components';
 /* Styled Components */
 
 const NavBarContainer = styled.div`
-  padding-top: 44px;
   height: 45px;
   display: flex;
   flex-direction: 'row';

@@ -5,7 +5,6 @@ import Popup from './Popup';
 import NavBar from './NavBar';
 import AddBar from './AddBar';
 import CoverImage from './CoverImage';
-import rebound from 'rebound';
 import logo from './images/share.svg';
 import './reset.css';
 import styled from 'styled-components';
@@ -58,38 +57,9 @@ class App extends Component {
       overlayOpacity : 0.0,
       style : { transform : 'scale3d(1,1,1)' }
     }
-    // Setup spring
-    this.spring = new rebound.Spring();
-    this.springSystem = new rebound.SpringSystem();
-    this.spring = this.springSystem.createSpring(Constants.SpringTension, Constants.SpringFriction);
-    this.spring.addListener({
-      onSpringUpdate: this.handleSpringUpdate
-    });
-  }
-
-  // Spring
-  handleSpringUpdate = (spring) => {
-    var val = spring.getCurrentValue();
-    val = rebound.MathUtil
-                 .mapValueInRange(val, 0, 1, 1, 0.5);
-    this.setState( {
-      style : { transform : 'scale3d(' + val + ', ' + val + ', 1)' }
-    });
   }
 
   // Mouse events
-  handleClickOnLogo = (e) => {
-    console.debug('Click');
-  }
-  handleMouseDown = (e) => {
-    console.debug('Down');
-    this.spring.setEndValue(1);
-  }
-  handleMouseUp = (e) => {
-    console.debug('Up');
-    this.spring.setEndValue(0);
-  }
-
   handleClickOnAddCover = (e) => {
     console.debug('Click on add cover')
     this.setState({

@@ -12,9 +12,13 @@ class Constants {
     this.MidGray = '#AFAEAC';
     this.LightGray = '#E1E1E0';
 
+    /* Dimensions */
+    this.CoverImageHeight = 200;
+
     /* Spring */
-    this.SpringTension = 300;
-    this.SpringFriction = 30;
+    this.SpringStiffness = 300;
+    this.SpringDamping = 30;
+    this.SpringParameters = { stiffness: this.SpringStiffness, damping: this.SpringDamping };
   }
 }
 

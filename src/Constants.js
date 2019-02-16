@@ -1,30 +1,31 @@
 class Constants {
-  constructor() {
+	constructor() {
 
-  	/* Labels */
-  	this.Title = 'Travel List';
-  	this.AddIconLabel = 'Add Icon';
-  	this.AddCoverLabel = 'Add Cover';
-  	this.AddDiscussionLabel = 'Add Discussion';
+		/* Labels */
+		this.Title = 'Travel List';
+		this.AddIconLabel = 'Add Icon';
+		this.AddCoverLabel = 'Add Cover';
+		this.AddDiscussionLabel = 'Add Discussion';
 
-  	/* Colors */
-    this.StandardGray = '#37352F';
-    this.MidGray = '#AFAEAC';
-    this.LightGray = '#E1E1E0';
+		/* Visual */
+		this.StandardGray = '#37352F';
+		this.MidGray = '#AFAEAC';
+		this.LightGray = '#E1E1E0';
+		this.OverlayMaxOpacity = 0.15;
 
-    /* Dimensions */
-    this.CoverImageHeight = 200;
+		/* Dimensions */
+		this.CoverImageHeight = 200;
 
-    /* z indexes */
-    this.zPopup = -1;
-    this.zCoverImage = -2;
-    this.zOverlay = -3;
+		/* z indexes */
+		this.zPopup = 4;
+		this.zCoverImage = 3;
+		this.zOverlay = 0;
 
-    /* Spring */
-    this.SpringStiffness = 300;
-    this.SpringDamping = 30;
-    this.SpringParameters = { stiffness: this.SpringStiffness, damping: this.SpringDamping };
-  }
+		/* Spring */
+		this.SpringStiffness = 300;
+		this.SpringDamping = 30;
+		this.SpringParameters = { stiffness: this.SpringStiffness, damping: this.SpringDamping };
+	}
 }
 
 export default (new Constants());

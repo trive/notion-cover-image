@@ -6,16 +6,17 @@ import styled from 'styled-components';
 /* Styled Components */
 
 const StyledPopup = styled.div`
-  overflow-y:scroll;
-  width:200px;
-  height:200px;
-  background-color:red;
-  -webkit-overflow-scrolling: touch;
-  z-index: ${Constants.zPopup};
+	position: relative;
+	overflow-y:scroll;
+	width:200px;
+	height:200px;
+	background-color:red;
+	-webkit-overflow-scrolling: touch;
+	z-index: ${Constants.zPopup};
 `
 const PopupContent = styled.div`
-  height:400px;
-  background-color:yellow;
+	height:400px;
+	background-color:yellow;
 `
 
 
@@ -23,22 +24,22 @@ const PopupContent = styled.div`
 
 class Popup extends Component {
 
-  constructor(props) {
-    super(props);
-    this.myRef = createRef();
-  }
+	constructor(props) {
+		super(props);
+		this.myRef = createRef();
+	}
 
-  render() {
-    return (
-      <StyledPopup ref={this.myRef} onScroll={this.handleScroll}>
-        <PopupContent />
-      </StyledPopup>
-    );
-  }
+	render() {
+		return (
+			<StyledPopup ref={this.myRef} onScroll={this.handleScroll}>
+				<PopupContent />
+			</StyledPopup>
+		);
+	}
 
-  handleScroll = (event) => {
-    console.debug(this.myRef.current.scrollTop);
-  }
+	handleScroll = (event) => {
+		console.debug(this.myRef.current.scrollTop);
+	}
 }
 
 export default Popup;

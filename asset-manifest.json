@@ -1,0 +1,21 @@
+{
+  "main.css": "/notion/static/css/main.16772c9a.chunk.css",
+  "main.js": "/notion/static/js/main.97274be2.chunk.js",
+  "main.js.map": "/notion/static/js/main.97274be2.chunk.js.map",
+  "runtime~main.js": "/notion/static/js/runtime~main.0e46e25a.js",
+  "runtime~main.js.map": "/notion/static/js/runtime~main.0e46e25a.js.map",
+  "static/js/2.d7a1ac45.chunk.js": "/notion/static/js/2.d7a1ac45.chunk.js",
+  "static/js/2.d7a1ac45.chunk.js.map": "/notion/static/js/2.d7a1ac45.chunk.js.map",
+  "index.html": "/notion/index.html",
+  "precache-manifest.c13fb2a8c08623ff2fa7e09d42ab9047.js": "/notion/precache-manifest.c13fb2a8c08623ff2fa7e09d42ab9047.js",
+  "service-worker.js": "/notion/service-worker.js",
+  "static/css/main.16772c9a.chunk.css.map": "/notion/static/css/main.16772c9a.chunk.css.map",
+  "static/media/add-cover.svg": "/notion/static/media/add-cover.57285bc3.svg",
+  "static/media/add-discussion.svg": "/notion/static/media/add-discussion.65843101.svg",
+  "static/media/add-icon.svg": "/notion/static/media/add-icon.841da1ee.svg",
+  "static/media/dotdotdot.svg": "/notion/static/media/dotdotdot.729d444f.svg",
+  "static/media/hamburger.svg": "/notion/static/media/hamburger.3ae9ee55.svg",
+  "static/media/notifications.svg": "/notion/static/media/notifications.2c59f598.svg",
+  "static/media/share.svg": "/notion/static/media/share.0c678037.svg",
+  "static/media/test.jpg": "/notion/static/media/test.74cf5a05.jpg"
+}

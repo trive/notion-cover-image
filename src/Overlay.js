@@ -4,16 +4,12 @@ import styled from 'styled-components';
 
 /* Styled Components */
 
-const StyledPopup = styled.div`
-  overflow-y:scroll;
-  width:200px;
-  height:200px;
-  background-color:red;
-  -webkit-overflow-scrolling: touch;
-`
-const PopupContent = styled.div`
-  height:400px;
-  background-color:yellow;
+const Overlay = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.0;
 `
 
 

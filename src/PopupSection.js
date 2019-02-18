@@ -26,6 +26,7 @@ const PopupSectionGrid = styled.div`
 	flex-direction: row;
 	flex-wrap: wrap;
 	margin: 0 -2.5px;
+	width: 100%;
 `
 
 const PopupImage = styled.img`

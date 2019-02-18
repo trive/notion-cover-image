@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Constants from './Constants';
 import camera from './images/camera.svg';
 import search from './images/search.svg';
 import styled from 'styled-components';

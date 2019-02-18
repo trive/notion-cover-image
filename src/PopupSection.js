@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Motion, spring} from 'react-motion';
 import Constants from './Constants';
 import styled from 'styled-components';
 
@@ -48,7 +47,7 @@ const PopupImage = styled.img`
 
 class PopupSection extends Component {
 	isActive(number) {
-		return this.props.isSelectedCategory && number == this.props.selectedImage
+		return this.props.isSelectedCategory && (number === this.props.selectedImage)
 	}
 
 	render() {

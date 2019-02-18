@@ -1,4 +1,4 @@
-import React, { createRef, Component } from 'react';
+import React, { Component } from 'react';
 import {Motion, spring} from 'react-motion';
 import Constants from './Constants';
 import PopupHeader from './PopupHeader';
@@ -34,9 +34,6 @@ const PopupScroll = styled.div`
 
 class Popup extends Component {
 	render() {
-		var width = window.innerWidth
-		|| document.documentElement.clientWidth
-		|| document.body.clientWidth;
 		var height = window.innerHeight
 		|| document.documentElement.clientHeight
 		|| document.body.clientHeight;
@@ -51,7 +48,7 @@ class Popup extends Component {
 						  descriptor={category}
 						  onClick={this.props.onClick}
 						  selectedImage={this.props.selectedImage}
-						  isSelectedCategory={index+1 == this.props.selectedCategory} />)
+						  isSelectedCategory={index+1 === this.props.selectedCategory} />)
 		return (
 			<div>
 				<Motion style={{ opacity: popupOpacity,

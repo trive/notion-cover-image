@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Constants from './Constants';
 import hamburger from './images/hamburger.svg';
 import share from './images/share.svg';
 import more from './images/dotdotdot.svg';

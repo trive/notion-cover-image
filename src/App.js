@@ -5,7 +5,6 @@ import Popup from './Popup';
 import NavBar from './NavBar';
 import AddBar from './AddBar';
 import CoverImage from './CoverImage';
-import logo from './images/share.svg';
 import './reset.css';
 import styled from 'styled-components';
 
@@ -26,11 +25,6 @@ const Content = styled.p`
 	color: ${Constants.StandardGray};
 	padding-top: 39px;
 	padding-left: 26px;
-`
-const Logo = styled.img`
-	width: 150px;
-	margin: 0 auto;
-	display: block; // to make centering work
 `
 
 const Overlay = styled.div`

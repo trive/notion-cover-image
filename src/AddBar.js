@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Motion, spring} from 'react-motion';
 import Constants from './Constants';
 import addicon from './images/add-icon.svg';
 import addcover from './images/add-cover.svg';
@@ -31,9 +30,6 @@ const AddBarItemContainer = styled.div`
 	overflow: hidden;
 `
 
-const NavBarText = styled.div`
-	font-weight: 500; //medium;
-`
 
 /* Component */
 

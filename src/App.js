@@ -52,7 +52,7 @@ class App extends Component {
 		super(props);
 		// State
 		this.state = {
-			isShowingPopup : true,
+			isShowingPopup : false,
 			hasCoverImage : false,
 			selectedCategory : 2,   // Default
 			selectedImage : 4		// Default
@@ -86,17 +86,28 @@ class App extends Component {
 		});
 	}
 
+	handleClickOnCover = (e) => {
+		console.debug('Click on cover image');
+		if (!this.state.isShowingPopup) {
+			this.setState({
+				isShowingPopup : true
+			})
+		}
+	}
+
 	render() {
 		var overlayOpacity = spring(this.state.isShowingPopup ? Constants.OverlayMaxOpacity : 0.0, Constants.SpringParameters);
 		return (
 			<StyledApp>
 				<NavBar />
 				<CoverImage showCoverImage={this.state.isShowingPopup || this.state.hasCoverImage}
-							imagePath={require(Constants.PickerPath + Constants.ImageCategories[this.state.selectedCategory-1] + "/" + this.state.selectedImage + '.jpg')} />
+							imagePath={require(Constants.PickerPath + Constants.ImageCategories[this.state.selectedCategory-1] + "/" + this.state.selectedImage + '.jpg')}
+							onClick={this.handleClickOnCover} />
 				<AddBar addCoverHandler={this.handleClickOnAddCover}
 						showAddCover={!this.state.hasCoverImage} />
 				<Content>Travel List</Content>
 				<Popup isVisible={this.state.isShowingPopup}
+					   hasCoverImage={this.state.hasCoverImage}
 					   selectedCategory={this.state.selectedCategory}
 					   selectedImage={this.state.selectedImage}
 					   onClick={this.handleClickOnImage} />

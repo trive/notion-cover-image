@@ -42,7 +42,7 @@ class Popup extends Component {
 		var sheetHeight = height-Constants.PopupTopY-5;
 		var popupOpacity = spring(this.props.isVisible ? 1.0 : 0.0, Constants.SpringParameters);
 		var popupScale = spring(this.props.isVisible ? Constants.PopupScale : Constants.PopupClosedScale, Constants.SpringParameters);
-		var popupTop = spring(this.props.isVisible ? Constants.PopupTopY : Constants.PopupClosedTopY, Constants.SpringParameters);
+		var popupTop = spring(this.props.isVisible ? Constants.PopupTopY : (this.props.hasCoverImage ? Constants.PopupAlreadyPresentTopY : Constants.PopupClosedTopY), Constants.SpringParameters);
 		var pEvents = this.props.isVisible ? 'auto' : 'none';
 		var Sections = Constants.ImageCategories.map((category,index) =>
 			<PopupSection key={category.key}

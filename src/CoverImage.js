@@ -18,7 +18,8 @@ class CoverImage extends Component {
 			<Motion style={{height: maskHeight}}>
 				{interpolatingStyle =>
 					<CoverImageContent src={this.props.imagePath}
-									   style={interpolatingStyle}/>
+									   style={interpolatingStyle}
+									   onClick={this.props.onClick}/>
 				}
 			</Motion>
 		);

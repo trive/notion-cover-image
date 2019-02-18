@@ -3,6 +3,7 @@ import {Motion, spring} from 'react-motion';
 import Constants from './Constants';
 import PopupHeader from './PopupHeader';
 import PopupSection from './PopupSection';
+import RemoveButton from './RemoveButton';
 import styled from 'styled-components';
 
 
@@ -61,6 +62,8 @@ class Popup extends Component {
 							<PopupHeader />
 								<PopupScroll>
 									{Sections}		
+									<RemoveButton onClick={this.props.onRemoveClick}
+											 	  label="Remove Cover Photo"/>
 								</PopupScroll>
 						</PopupContainer>}
 				</Motion>

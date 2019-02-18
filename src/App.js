@@ -52,8 +52,8 @@ class App extends Component {
 		super(props);
 		// State
 		this.state = {
-			isShowingPopup : false,
-			hasCoverImage : false,
+			isShowingPopup : true,
+			hasCoverImage : true,
 			selectedCategory : 2,   // Default
 			selectedImage : 4		// Default
 		}
@@ -95,6 +95,14 @@ class App extends Component {
 		}
 	}
 
+	handleClickOnRemove = (e) => {
+		console.debug('Click on remove image');
+		this.setState({
+			isShowingPopup : false,
+			hasCoverImage : false
+		})
+	}
+
 	render() {
 		var overlayOpacity = spring(this.state.isShowingPopup ? Constants.OverlayMaxOpacity : 0.0, Constants.SpringParameters);
 		return (
@@ -110,7 +118,8 @@ class App extends Component {
 					   hasCoverImage={this.state.hasCoverImage}
 					   selectedCategory={this.state.selectedCategory}
 					   selectedImage={this.state.selectedImage}
-					   onClick={this.handleClickOnImage} />
+					   onClick={this.handleClickOnImage}
+					   onRemoveClick={this.handleClickOnRemove} />
 				<Motion
 					style={{opacity: overlayOpacity}}>
 				{interpolatingStyle =>

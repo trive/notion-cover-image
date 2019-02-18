@@ -11,7 +11,9 @@ class Constants {
 		this.StandardGray = '#37352F';
 		this.MidGray = '#AFAEAC';
 		this.LightGray = '#E1E1E0';
+		this.Red = '#FF2943';
 		this.OverlayMaxOpacity = 0.15;
+		this.CornerRadius = '10px';
 
 		/* Dimensions & positions */
 		this.CoverImageHeight = 200;

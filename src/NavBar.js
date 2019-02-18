@@ -12,7 +12,7 @@ import styled from 'styled-components';
 const NavBarContainer = styled.div`
 	height: 44px;
 	display: flex;
-	flex-direction: 'row';
+	flex-direction: row;
 	flex-grow: 1;
 	padding-left: 5px;
 	padding-right: 6px;

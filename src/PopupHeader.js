@@ -10,14 +10,13 @@ import styled from 'styled-components';
 const PopupHeaderContainer = styled.div`
 	height: 62px;
 	display: flex;
-	flex-direction: 'row';
+	flex-direction: row;
 	flex-grow: 1;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-left: 11px;
+	padding-right: 11px;
 `
 
 const PopUpHeaderIcon = styled.img`
-	margin: 9px;
 `
 
 const PopUpHeaderText = styled.div`

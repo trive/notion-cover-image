@@ -3,7 +3,6 @@ import {Motion, spring} from 'react-motion';
 import Constants from './Constants';
 import PopupHeader from './PopupHeader';
 import PopupSection from './PopupSection';
-import sheet from './images/popup.png';
 import styled from 'styled-components';
 
 
@@ -11,9 +10,9 @@ import styled from 'styled-components';
 
 const PopupContainer = styled.div`
 	position: fixed;
-	width: 90%;
+	width: 97.3%;
 	height: 70%;
-	margin: auto;
+	margin-left: 1.35%;
     background-color: yellow;
     z-index: ${Constants.zPopup};
 `
@@ -43,7 +42,7 @@ class Popup extends Component {
 					{value => 	<PopupContainer style={{ opacity: value.opacity, top: value.top, transform: `scale(${value.scale})` }}>
 									<PopupHeader />
 									<PopupSection index={0}
-												  descriptor="Colors"
+												  descriptor="Gradients"
 												  onClick={this.props.onClick} />
 						 		</PopupContainer>}
 				</Motion>

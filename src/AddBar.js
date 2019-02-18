@@ -80,8 +80,8 @@ class AddBar extends Component {
 								onMouseDown={this.handleIn}
 								onMouseUp={this.handleOut}
 								onMouseOut={this.handleOut}
-								style={{	backgroundColor: color,
-											borderRadius: '3px'}} />
+								style={{ backgroundColor: color,
+										 borderRadius: '3px'}} />
 					) : null 
 				}
 				<AddBarItem image={adddiscussion} label="Add Discussion" />

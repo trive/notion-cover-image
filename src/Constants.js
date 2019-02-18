@@ -30,6 +30,10 @@ class Constants {
 		this.SpringStiffness = 300;
 		this.SpringDamping = 30;
 		this.SpringParameters = { stiffness: this.SpringStiffness, damping: this.SpringDamping };
+
+		/* Misc */
+		this.Numbers = [1,2,3,4,5,6];
+		this.PickerPath = "./images/picker/";
 	}
 }
 

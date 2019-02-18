@@ -5,16 +5,11 @@ import Constants from './Constants';
 import image from './images/picker/test.jpg';
 import styled from 'styled-components';
 
-
-const CoverImageContainer = styled.div`
-	position: relative;
-	overflow: hidden;
-	z-index: ${Constants.zCoverImage};
-`
-
 const CoverImageContent = styled.img`
-	width: 100%;
-	transform: translateY(-25%);
+	width:100%;
+	object-fit: cover;
+	object-position: 50% 50%;
+	z-index: ${Constants.zCoverImage};
 `
 
 class CoverImage extends Component {
@@ -22,11 +17,11 @@ class CoverImage extends Component {
 		var maskHeight = spring(this.props.showCoverImage ? Constants.CoverImageHeight : 0, Constants.SpringParameters);
 		return (
 			<Motion style={{height: maskHeight}}>
-			{interpolatingStyle =>
-				<CoverImageContainer style={interpolatingStyle}>
-							<CoverImageContent src={image} />
-				</CoverImageContainer>}
-		</Motion>
+				{interpolatingStyle =>
+					<CoverImageContent src={image}
+									   style={interpolatingStyle}/>
+				}
+			</Motion>
 		);
 	}
 }

@@ -46,7 +46,7 @@ class Popup extends Component {
 		var popupTop = spring(this.props.isVisible ? Constants.PopupTopY : (this.props.hasCoverImage ? Constants.PopupAlreadyPresentTopY : Constants.PopupClosedTopY), Constants.SpringParameters);
 		var pEvents = this.props.isVisible ? 'auto' : 'none';
 		var Sections = Constants.ImageCategories.map((category,index) =>
-			<PopupSection key={category.key}
+			<PopupSection key={index}
 						  categoryKey={(index+1).toString()}
 						  descriptor={category}
 						  onClick={this.props.onClick}

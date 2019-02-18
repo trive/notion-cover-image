@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Motion, spring} from 'react-motion';
 import Constants from './Constants';
-import State from './State';
 import styled from 'styled-components';
 
 
@@ -54,7 +53,8 @@ class PopupSection extends Component {
 
 	render() {
 		var Images = Constants.Numbers.map((number) =>
-			<PopupImage imageKey={number.toString()}
+			<PopupImage key={number}
+						imageKey={number.toString()}
 						src={require(Constants.PickerPath + this.props.descriptor + "/" + number.toString() + '.jpg')}
 						active={this.isActive(number)}
 						onClick={() => { this.props.onClick(parseInt(this.props.categoryKey), number) }}/>)

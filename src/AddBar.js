@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Motion, spring} from 'react-motion';
 import Constants from './Constants';
-import State from './State';
 import addicon from './images/add-icon.svg';
 import addcover from './images/add-cover.svg';
 import adddiscussion from './images/add-discussion.svg';
@@ -60,7 +59,6 @@ class AddBar extends Component {
 	handleClickOnAddCover = (e) => {
 		this.handleOut(e);
 		this.props.addCoverHandler(e);
-		State.isShowingPopup = !State.isShowingPopup;
 	}
 
 	render() {

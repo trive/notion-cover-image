@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Motion, spring} from 'react-motion';
 import Constants from './Constants';
-import State from './State';
 import Popup from './Popup';
 import NavBar from './NavBar';
 import AddBar from './AddBar';

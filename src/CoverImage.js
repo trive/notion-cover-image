@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Motion, spring} from 'react-motion';
-import State from './State';
 import Constants from './Constants';
 import styled from 'styled-components';
 

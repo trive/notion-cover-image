@@ -13,8 +13,13 @@ class Constants {
 		this.LightGray = '#E1E1E0';
 		this.OverlayMaxOpacity = 0.15;
 
-		/* Dimensions */
+		/* Dimensions & positions */
 		this.CoverImageHeight = 200;
+		this.PopupTopY = 300;
+		this.PopupClosedTopY = 150;
+		this.PopupScale = 1.0;
+		this.PopupClosedScale = 0.8;
+		this.PopupWidth = 365/375;
 
 		/* z indexes */
 		this.zPopup = 4;

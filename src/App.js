@@ -52,12 +52,13 @@ class App extends Component {
 		super(props);
 		// State
 		this.state = {
-			isShowingPopup : false,
+			isShowingPopup : true,
 			hasCoverImage : false
 		}
 	}
 
-	// Mouse events
+	/* Mouse events */
+
 	handleClickOnAddCover = (e) => {
 		console.debug('Click on add cover');
 		this.setState({
@@ -72,6 +73,10 @@ class App extends Component {
 				isShowingPopup : false
 			})
 		}
+	}
+
+	handleClickOnImage = (section, image) => {
+		console.debug('Image click, section ' +  section + ', image ' + image)
 	}
 
 	render() {
@@ -90,9 +95,11 @@ class App extends Component {
 			<StyledApp>
 				<NavBar />
 				<CoverImage showCoverImage={this.state.isShowingPopup || this.state.hasCoverImage} />
-				<AddBar addCoverHandler={this.handleClickOnAddCover} />
+				<AddBar addCoverHandler={this.handleClickOnAddCover}
+						showAddCover={!this.state.isShowingPopup && !this.state.hasCoverImage} />
 				<Content>Travel List</Content>
-				<Popup />
+				<Popup isVisible={this.state.isShowingPopup}
+					   onClick={this.handleClickOnImage} />
 				<Motion
 					style={{opacity: overlayOpacity}}>
 				{interpolatingStyle =>
@@ -100,7 +107,7 @@ class App extends Component {
 					isClickable={this.state.isShowingPopup}
 					onClick={this.handleClickOnOverlay}
 					style={interpolatingStyle} />}
-		</Motion>
+				</Motion>
 			</StyledApp>
 		);
 	}

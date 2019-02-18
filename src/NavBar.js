@@ -20,7 +20,7 @@ const NavBarContainer = styled.div`
 
 const NavBarIcon = styled.img`
 	padding: 9px;
-	padding-top: ${props => props.pushUp ? '7px' : '9px'};
+	padding-top: ${props => props.opticalCorrection ? '7px' : '9px'};
 `
 
 const NavBarText = styled.div`
@@ -49,7 +49,7 @@ class NavBar extends Component {
 					<NavBarIcon src={hamburger} />
 					<NavBarText>Travel List</NavBarText>
 					<NavBarIcon src={more} />
-					<NavBarIcon pushUp src={share} />
+					<NavBarIcon opticalCorrection src={share} />
 					<NavBarIcon src={notifications} />
 				</NavBarContainer>
 				<Divider />

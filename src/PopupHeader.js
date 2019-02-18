@@ -8,10 +8,10 @@ import styled from 'styled-components';
 /* Styled Components */
 
 const PopupHeaderContainer = styled.div`
-	height: 62px;
+	min-height: 62px;
+	max-height: 62px;
 	display: flex;
 	flex-direction: row;
-	flex-grow: 0;
 	padding-left: 11px;
 	padding-right: 11px;
 `

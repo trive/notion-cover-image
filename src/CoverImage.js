@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Motion, spring} from 'react-motion';
 import State from './State';
 import Constants from './Constants';
-import image from './images/picker/test.jpg';
 import styled from 'styled-components';
 
 const CoverImageContent = styled.img`
@@ -18,7 +17,7 @@ class CoverImage extends Component {
 		return (
 			<Motion style={{height: maskHeight}}>
 				{interpolatingStyle =>
-					<CoverImageContent src={image}
+					<CoverImageContent src={this.props.imagePath}
 									   style={interpolatingStyle}/>
 				}
 			</Motion>

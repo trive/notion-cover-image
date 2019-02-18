@@ -53,7 +53,9 @@ class App extends Component {
 		// State
 		this.state = {
 			isShowingPopup : true,
-			hasCoverImage : false
+			hasCoverImage : false,
+			selectedCategory : 2,   // Default
+			selectedImage : 4		// Default
 		}
 	}
 
@@ -62,7 +64,8 @@ class App extends Component {
 	handleClickOnAddCover = (e) => {
 		console.debug('Click on add cover');
 		this.setState({
-			isShowingPopup : !this.state.isShowingPopup
+			isShowingPopup : !this.state.isShowingPopup,
+			hasCoverImage : true
 		})
 	}
 
@@ -77,6 +80,10 @@ class App extends Component {
 
 	handleClickOnImage = (section, image) => {
 		console.debug('Image click, section ' +  section + ', image ' + image)
+		this.setState({
+			selectedCategory : section,
+			selectedImage : image
+		});
 	}
 
 	render() {
@@ -84,11 +91,14 @@ class App extends Component {
 		return (
 			<StyledApp>
 				<NavBar />
-				<CoverImage showCoverImage={this.state.isShowingPopup || this.state.hasCoverImage} />
+				<CoverImage showCoverImage={this.state.isShowingPopup || this.state.hasCoverImage}
+							imagePath={require(Constants.PickerPath + Constants.ImageCategories[this.state.selectedCategory-1] + "/" + this.state.selectedImage + '.jpg')} />
 				<AddBar addCoverHandler={this.handleClickOnAddCover}
 						showAddCover={!this.state.hasCoverImage} />
 				<Content>Travel List</Content>
 				<Popup isVisible={this.state.isShowingPopup}
+					   selectedCategory={this.state.selectedCategory}
+					   selectedImage={this.state.selectedImage}
 					   onClick={this.handleClickOnImage} />
 				<Motion
 					style={{opacity: overlayOpacity}}>

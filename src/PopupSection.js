@@ -53,8 +53,8 @@ class PopupSection extends Component {
 	render() {
 		var Images = Constants.Numbers.map((number) =>
 			<PopupImage key={number.toString()}
-						src={require(Constants.PickerPath + this.props.descriptor + "/" + number.toString() + '.png')}
-						onClick={() => { this.props.onClick(this.props.sectionIndex, number) }}/>)
+						src={require(Constants.PickerPath + this.props.descriptor + "/" + number.toString() + '.jpg')}
+						onClick={() => { this.props.onClick(this.props.key, number) }}/>)
 		return (
 			<PopupSectionContainer>
 				<PopupSectionTitle>{this.props.descriptor}</PopupSectionTitle>

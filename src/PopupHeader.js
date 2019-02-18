@@ -11,7 +11,7 @@ const PopupHeaderContainer = styled.div`
 	height: 62px;
 	display: flex;
 	flex-direction: row;
-	flex-grow: 1;
+	flex-grow: 0;
 	padding-left: 11px;
 	padding-right: 11px;
 `

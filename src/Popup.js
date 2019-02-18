@@ -16,15 +16,8 @@ const PopupContainer = styled.div`
     border-radius: 18px 18px 34px 34px;
     box-shadow: 0px -1px 12px rgba(0, 0, 0, .15);
     z-index: ${Constants.zPopup};
-`
-
-const PopupImage = styled.img`
-	max-width:100%;
-`
-
-const PopupContent = styled.div`
-	height:400px;
-	background-color:yellow;
+    overflow: scroll;
+	::-webkit-scrollbar {display:none;}
 `
 
 
@@ -42,6 +35,10 @@ class Popup extends Component {
 		var popupOpacity = spring(this.props.isVisible ? 1.0 : 0.0, Constants.SpringParameters);
 		var popupScale = spring(this.props.isVisible ? Constants.PopupScale : Constants.PopupClosedScale, Constants.SpringParameters);
 		var popupTop = spring(this.props.isVisible ? Constants.PopupTopY : Constants.PopupClosedTopY, Constants.SpringParameters);
+		var Sections = Constants.ImageCategories.map((category,index) =>
+			<PopupSection key={index.toString()}
+						  descriptor={category}
+						  onClick={this.props.onClick}/>)
 		return (
 			<div>
 				<Motion style={{ opacity: popupOpacity,
@@ -49,11 +46,9 @@ class Popup extends Component {
 								 top: popupTop}}>
 					{value => 
 						<PopupContainer style={{ opacity: value.opacity, height: sheetHeight, top: value.top, transform: `scale(${value.scale})` }}>
-									<PopupHeader />
-									<PopupSection sectionIndex={0}
-												  descriptor="Gradients"
-												  onClick={this.props.onClick} />
-						 		</PopupContainer>}
+							<PopupHeader />
+							{Sections}		
+						</PopupContainer>}
 				</Motion>
 			</div>
 		);

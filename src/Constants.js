@@ -34,7 +34,7 @@ class Constants {
 		/* Image Picker */
 		this.Numbers = [1,2,3,4,5,6];
 		this.PickerPath = "./images/picker/";
-		this.ImageCategories = [ "Colors", "Gradients", "Abstract" ];
+		this.ImageCategories = [ "Colors", "Gradients", "Abstract", "Architecture", "Cities", "Art", "Nature", "Science" ];
 	}
 }
 

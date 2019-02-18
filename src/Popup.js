@@ -27,6 +27,7 @@ const PopupScroll = styled.div`
     overflow: scroll;
     border-radius: 0px 0px 34px 34px;
 	::-webkit-scrollbar {display:none;}
+    -webkit-overflow-scrolling: touch; //inertial scrolling
 `
 
 

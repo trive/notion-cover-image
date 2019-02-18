@@ -43,8 +43,8 @@ const PopupImage = styled.img`
 /* Component */
 
 class PopupSection extends Component {
-	
-	handleClickOnAddCover = (e) => {
+
+	handleClickOnImage = (e) => {
 		this.handleOut(e);
 		this.props.addCoverHandler(e);
 		State.isShowingPopup = !State.isShowingPopup;
@@ -53,7 +53,8 @@ class PopupSection extends Component {
 	render() {
 		var Images = Constants.Numbers.map((number) =>
 			<PopupImage key={number.toString()}
-						src={require(Constants.PickerPath + this.props.descriptor + "/" + number.toString() + '.png')}/>)
+						src={require(Constants.PickerPath + this.props.descriptor + "/" + number.toString() + '.png')}
+						onClick={() => { this.props.onClick(this.props.sectionIndex, number) }}/>)
 		return (
 			<PopupSectionContainer>
 				<PopupSectionTitle>{this.props.descriptor}</PopupSectionTitle>

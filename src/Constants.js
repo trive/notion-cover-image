@@ -15,8 +15,8 @@ class Constants {
 
 		/* Dimensions & positions */
 		this.CoverImageHeight = 200;
-		this.PopupTopY = 300;
-		this.PopupClosedTopY = 150;
+		this.PopupTopY = 238;
+		this.PopupClosedTopY = 38;
 		this.PopupScale = 1.0;
 		this.PopupClosedScale = 0.8;
 		this.PopupWidth = 365/375;
@@ -31,9 +31,10 @@ class Constants {
 		this.SpringDamping = 30;
 		this.SpringParameters = { stiffness: this.SpringStiffness, damping: this.SpringDamping };
 
-		/* Misc */
+		/* Image Picker */
 		this.Numbers = [1,2,3,4,5,6];
 		this.PickerPath = "./images/picker/";
+		this.ImageCategories = [ "Colors", "Gradients", "Abstract" ];
 	}
 }
 

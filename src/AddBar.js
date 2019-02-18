@@ -65,14 +65,10 @@ class AddBar extends Component {
 
 	render() {
 		var color = this.state.isHighlighted ? Constants.LightGray : null;
-		var scale = spring(this.props.showAddCover ? 1.0 : 0.0, Constants.SpringParameters);
-		var opacity = spring(this.props.showAddCover ? 1.0 : 0.0, Constants.
-			SpringParameters);
-		var width = spring(this.props.showAddCover ? null : '0px', Constants.SpringParameters);
 		return (
 			<AddBarContainer>
 				<AddBarItem image={addicon} label="Add Icon" />
-				{this.state.showAddCover ? (
+				{this.props.showAddCover ? (
 					<AddBarItem image={addcover}
 								label="Add Cover"
 								onClick={this.handleClickOnAddCover}

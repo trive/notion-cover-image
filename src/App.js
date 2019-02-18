@@ -80,23 +80,13 @@ class App extends Component {
 	}
 
 	render() {
-		var width = window.innerWidth
-		|| document.documentElement.clientWidth
-		|| document.body.clientWidth;
-		var height = window.innerHeight
-		|| document.documentElement.clientHeight
-		|| document.body.clientHeight;
-
-		console.debug(width);
-		console.debug(height);
-
 		var overlayOpacity = spring(this.state.isShowingPopup ? Constants.OverlayMaxOpacity : 0.0, Constants.SpringParameters);
 		return (
 			<StyledApp>
 				<NavBar />
 				<CoverImage showCoverImage={this.state.isShowingPopup || this.state.hasCoverImage} />
 				<AddBar addCoverHandler={this.handleClickOnAddCover}
-						showAddCover={!this.state.isShowingPopup && !this.state.hasCoverImage} />
+						showAddCover={!this.state.hasCoverImage} />
 				<Content>Travel List</Content>
 				<Popup isVisible={this.state.isShowingPopup}
 					   onClick={this.handleClickOnImage} />

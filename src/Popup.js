@@ -11,9 +11,10 @@ import styled from 'styled-components';
 const PopupContainer = styled.div`
 	position: fixed;
 	width: 97.3%;
-	height: 70%;
 	margin-left: 1.35%;
-    background-color: yellow;
+    background-color: white;
+    border-radius: 18px 18px 34px 34px;
+    box-shadow: 0px -1px 12px rgba(0, 0, 0, .15);
     z-index: ${Constants.zPopup};
 `
 
@@ -31,6 +32,13 @@ const PopupContent = styled.div`
 
 class Popup extends Component {
 	render() {
+		var width = window.innerWidth
+		|| document.documentElement.clientWidth
+		|| document.body.clientWidth;
+		var height = window.innerHeight
+		|| document.documentElement.clientHeight
+		|| document.body.clientHeight;
+		var sheetHeight = height-Constants.PopupTopY-5;
 		var popupOpacity = spring(this.props.isVisible ? 1.0 : 0.0, Constants.SpringParameters);
 		var popupScale = spring(this.props.isVisible ? Constants.PopupScale : Constants.PopupClosedScale, Constants.SpringParameters);
 		var popupTop = spring(this.props.isVisible ? Constants.PopupTopY : Constants.PopupClosedTopY, Constants.SpringParameters);
@@ -39,19 +47,16 @@ class Popup extends Component {
 				<Motion style={{ opacity: popupOpacity,
 								 scale: popupScale,
 								 top: popupTop}}>
-					{value => 	<PopupContainer style={{ opacity: value.opacity, top: value.top, transform: `scale(${value.scale})` }}>
+					{value => 
+						<PopupContainer style={{ opacity: value.opacity, height: sheetHeight, top: value.top, transform: `scale(${value.scale})` }}>
 									<PopupHeader />
-									<PopupSection index={0}
+									<PopupSection sectionIndex={0}
 												  descriptor="Gradients"
 												  onClick={this.props.onClick} />
 						 		</PopupContainer>}
 				</Motion>
 			</div>
 		);
-	}
-
-	handleScroll = (event) => {
-		console.debug(this.myRef.current.scrollTop);
 	}
 }
 

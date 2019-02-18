@@ -24,7 +24,7 @@ const RemoveButtonIcon = styled.img`
 
 const RemoveButtonLabel = styled.div`
 	color: ${Constants.Red};
-	padding-left: 4px;
+	padding-left: 8px;
 `
 
 

@@ -7,8 +7,8 @@ import styled from 'styled-components';
 /* Styled Components */
 
 const PopupHeaderContainer = styled.div`
-	min-height: 62px;
-	max-height: 62px;
+	min-height: 56px;
+	max-height: 56px;
 	display: flex;
 	flex-direction: row;
 	padding-left: 11px;
@@ -20,7 +20,7 @@ const PopUpHeaderIcon = styled.img`
 
 const PopUpHeaderText = styled.div`
 	font-weight: 500; //medium
-	font-size: 20px;
+	font-size: 17px;
 	flex-grow: 1;
 	margin: auto;
 	text-align: center;

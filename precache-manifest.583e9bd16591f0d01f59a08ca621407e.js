@@ -1,39 +1,39 @@
 self.__precacheManifest = [
   {
-    "revision": "45212883e1f20e841396",
+    "revision": "c36ec5c4d4a71fe7461a",
     "url": "/notion-cover-image/static/css/main.0bf96ba1.chunk.css"
   },
   {
-    "revision": "45212883e1f20e841396",
-    "url": "/notion-cover-image/static/js/main.45212883.chunk.js"
+    "revision": "c36ec5c4d4a71fe7461a",
+    "url": "/notion-cover-image/static/js/main.c36ec5c4.chunk.js"
   },
   {
     "revision": "09c6c905660f03aab373",
     "url": "/notion-cover-image/static/js/runtime~main.09c6c905.js"
   },
   {
-    "revision": "a7309d92e21119e76ed8",
-    "url": "/notion-cover-image/static/js/2.a7309d92.chunk.js"
+    "revision": "199a6367cca16dfa8745",
+    "url": "/notion-cover-image/static/js/2.199a6367.chunk.js"
   },
   {
-    "revision": "0c6780372340e859918a10e352786052",
-    "url": "/notion-cover-image/static/media/share.0c678037.svg"
+    "revision": "84eb61a483dfb9e793ee907113c773c0",
+    "url": "/notion-cover-image/static/media/camera.84eb61a4.svg"
   },
   {
-    "revision": "68cc8d0b13c737929671d93f75842e91",
-    "url": "/notion-cover-image/static/media/camera.68cc8d0b.svg"
+    "revision": "43ab2d3f885c4b75547242286a72a40e",
+    "url": "/notion-cover-image/static/media/search.43ab2d3f.svg"
   },
   {
-    "revision": "0dd304ca909a205485fcfb4808e9681d",
-    "url": "/notion-cover-image/static/media/search.0dd304ca.svg"
-  },
-  {
-    "revision": "236f10129a45a2bb98c1e3919fb44f9d",
-    "url": "/notion-cover-image/static/media/remove.236f1012.svg"
+    "revision": "f489183f451c1aaee4d4676ca1c3f3cd",
+    "url": "/notion-cover-image/static/media/remove.f489183f.svg"
   },
   {
     "revision": "3ae9ee55cb25adcfdbafeff1370522d3",
     "url": "/notion-cover-image/static/media/hamburger.3ae9ee55.svg"
+  },
+  {
+    "revision": "0c6780372340e859918a10e352786052",
+    "url": "/notion-cover-image/static/media/share.0c678037.svg"
   },
   {
     "revision": "729d444f3a3295f1431ae3de7b52dcf1",
@@ -256,7 +256,7 @@ self.__precacheManifest = [
     "url": "/notion-cover-image/static/media/test.74cf5a05.jpg"
   },
   {
-    "revision": "a74f0e3a38427a69e6c9fce76086fb0c",
+    "revision": "6987cc74676a1e0cffd0870b48b95395",
     "url": "/notion-cover-image/index.html"
   }
 ];

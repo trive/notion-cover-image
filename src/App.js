@@ -45,8 +45,8 @@ class App extends Component {
 		super(props);
 		// State
 		this.state = {
-			isShowingPopup : true,
-			hasCoverImage : true,
+			isShowingPopup : false,
+			hasCoverImage : false,
 			selectedCategory : 2,   // Default
 			selectedImage : 4		// Default
 		}

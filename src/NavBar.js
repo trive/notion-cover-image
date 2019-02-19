@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import hamburger from './images/hamburger.svg';
 import share from './images/share.svg';
 import more from './images/dotdotdot.svg';
@@ -37,24 +37,19 @@ const Divider = styled.div`
 	display: block;
 `
 
-/* Popup */
+/* NavBar */
 
-class NavBar extends Component {
-
-	render() {
-		return (
-			<div>
-				<NavBarContainer>
-					<NavBarIcon src={hamburger} />
-					<NavBarText>Travel List</NavBarText>
-					<NavBarIcon src={more} />
-					<NavBarIcon opticalCorrection src={share} />
-					<NavBarIcon src={notifications} />
-				</NavBarContainer>
-				<Divider />
-			</div>
-		);
-	}
-}
+const NavBar = () => (
+	<React.Fragment>
+		<NavBarContainer>
+			<NavBarIcon src={hamburger} />
+			<NavBarText>Travel List</NavBarText>
+			<NavBarIcon src={more} />
+			<NavBarIcon opticalCorrection src={share} />
+			<NavBarIcon src={notifications} />
+		</NavBarContainer>
+		<Divider />
+	</React.Fragment>
+)
 
 export default NavBar;

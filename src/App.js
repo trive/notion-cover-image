@@ -100,7 +100,9 @@ class App extends Component {
 	}
 
 	render() {
-		var overlayOpacity = spring(this.state.isShowingPopup ? Constants.OverlayMaxOpacity : 0.0, Constants.SpringParameters);
+		const { isShowingPopup, hasCoverImage, selectedCategory, selectedImage } = this.state;
+		const { handleClickOnRemove } = this;
+		const overlayOpacity = spring(this.state.isShowingPopup ? Constants.OverlayMaxOpacity : 0.0, Constants.SpringParameters);
 		return (
 			<StyledApp>
 				<NavBar />

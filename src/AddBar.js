@@ -42,12 +42,12 @@ class AddBar extends Component {
 		}
 	}
 
-	handleIn = (e) => {
+	handleIn = () => {
 		this.setState({
 			isHighlighted : true
 		});
 	}
-	handleOut = (e) => {
+	handleOut = () => {
 		this.setState({
 			isHighlighted : false
 		});
@@ -62,7 +62,7 @@ class AddBar extends Component {
 		return (
 			<AddBarContainer>
 				<AddBarItem image={addicon} label="Add Icon" />
-				{this.props.showAddCover ? (
+				{this.props.showAddCover && 
 					<AddBarItem image={addcover}
 								label="Add Cover"
 								onClick={this.handleClickOnAddCover}
@@ -72,7 +72,6 @@ class AddBar extends Component {
 								onMouseOut={this.handleOut}
 								style={{ backgroundColor: color,
 										 borderRadius: '3px'}} />
-					) : null 
 				}
 				<AddBarItem image={adddiscussion} label="Add Discussion" />
 			</AddBarContainer>

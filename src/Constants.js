@@ -13,6 +13,7 @@ class Constants {
 		this.LightGray = '#E1E1E0';
 		this.Red = '#FF2943';
 		this.OverlayMaxOpacity = 0.15;
+		this.OverlayDarken = 0.85;
 		this.CornerRadius = '10px';
 
 		/* Dimensions & positions */

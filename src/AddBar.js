@@ -58,18 +58,21 @@ class AddBar extends Component {
 	}
 
 	render() {
-		var color = this.state.isHighlighted ? Constants.LightGray : null;
+		const { isHighlighted } = this.state;
+		const { LightGray } = Constants;
+		const { handleIn, handleOut, handleClickOnAddCover } = this;
+		const color = isHighlighted ? LightGray : null;
 		return (
 			<AddBarContainer>
 				<AddBarItem image={addicon} label="Add Icon" />
 				{this.props.showAddCover && 
 					<AddBarItem image={addcover}
 								label="Add Cover"
-								onClick={this.handleClickOnAddCover}
-								onMouseOver={this.handleIn}
-								onMouseDown={this.handleIn}
-								onMouseUp={this.handleOut}
-								onMouseOut={this.handleOut}
+								onClick={handleClickOnAddCover}
+								onMouseOver={handleIn}
+								onMouseDown={handleIn}
+								onMouseUp={handleOut}
+								onMouseOut={handleOut}
 								style={{ backgroundColor: color,
 										 borderRadius: '3px'}} />
 				}

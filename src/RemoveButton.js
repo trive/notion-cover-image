@@ -51,7 +51,7 @@ class RemoveButton extends Component {
 	}
 
 	render() {
-		var color = this.state.mouseDown ? Constants.MidGray : Constants.LightGray;
+		const color = this.state.mouseDown ? Constants.MidGray : Constants.LightGray;
 		return (
 			<RemoveButtonContainer onClick={this.props.onClick}
 								   style={{ backgroundColor : color }}

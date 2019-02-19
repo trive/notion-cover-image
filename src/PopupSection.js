@@ -67,7 +67,7 @@ class PopupSection extends Component {
 	}
 
 	render() {
-		var Images = Constants.Numbers.map((number) =>
+		const Images = Constants.Numbers.map((number) =>
 			<PopupImage key={number}
 						imageKey={number.toString()}
 						src={require(Constants.PickerPath + this.props.descriptor + "/" + number.toString() + '.jpg')}

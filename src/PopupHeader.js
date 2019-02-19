@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import camera from './images/camera.svg';
 import search from './images/search.svg';
 import styled from 'styled-components';
@@ -28,17 +28,12 @@ const PopUpHeaderText = styled.div`
 
 /* Popup */
 
-class PopupHeader extends Component {
-
-	render() {
-		return (
-			<PopupHeaderContainer>
-				<PopUpHeaderIcon src={camera} />
-				<PopUpHeaderText>Cover Image</PopUpHeaderText>
-				<PopUpHeaderIcon src={search} />
-			</PopupHeaderContainer>
-		);
-	}
-}
+const PopupHeader = () => (
+	<PopupHeaderContainer>
+		<PopUpHeaderIcon src={camera} />
+		<PopUpHeaderText>Cover Image</PopUpHeaderText>
+		<PopUpHeaderIcon src={search} />
+	</PopupHeaderContainer>
+)
 
 export default PopupHeader;

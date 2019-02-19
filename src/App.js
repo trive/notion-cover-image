@@ -47,8 +47,8 @@ class App extends Component {
 		this.scrollRef = React.createRef();
 		// State
 		this.state = {
-			isShowingPopup : true,
-			hasCoverImage : true,
+			isShowingPopup : false,
+			hasCoverImage : false,
 			selectedCategory : 2,   // Default
 			selectedImage : 4		// Default
 		}
@@ -101,29 +101,29 @@ class App extends Component {
 
 	render() {
 		const { isShowingPopup, hasCoverImage, selectedCategory, selectedImage } = this.state;
-		const { handleClickOnRemove } = this;
+		const { PickerPath, ImageCategories } = Constants;
 		const overlayOpacity = spring(this.state.isShowingPopup ? Constants.OverlayMaxOpacity : 0.0, Constants.SpringParameters);
 		return (
 			<StyledApp>
 				<NavBar />
-				<CoverImage showCoverImage={this.state.isShowingPopup || this.state.hasCoverImage}
-							imagePath={require(Constants.PickerPath + Constants.ImageCategories[this.state.selectedCategory-1] + "/" + this.state.selectedImage + '.jpg')}
+				<CoverImage showCoverImage={isShowingPopup || hasCoverImage}
+							imagePath={require(PickerPath + ImageCategories[selectedCategory-1] + "/" + selectedImage + '.jpg')}
 							onClick={this.handleClickOnCover} />
 				<AddBar addCoverHandler={this.handleClickOnAddCover}
-						showAddCover={!this.state.hasCoverImage} />
+						showAddCover={!hasCoverImage} />
 				<Content>Travel List</Content>
 				<Popup scrollRef={this.scrollRef}
-					   isVisible={this.state.isShowingPopup}
-					   hasCoverImage={this.state.hasCoverImage}
-					   selectedCategory={this.state.selectedCategory}
-					   selectedImage={this.state.selectedImage}
+					   isVisible={isShowingPopup}
+					   hasCoverImage={hasCoverImage}
+					   selectedCategory={selectedCategory}
+					   selectedImage={selectedImage}
 					   onClick={this.handleClickOnImage}
 					   onRemoveClick={this.handleClickOnRemove} />
 				<Motion
 					style={{opacity: overlayOpacity}}>
 				{interpolatingStyle =>
 					<Overlay
-					isClickable={this.state.isShowingPopup}
+					isClickable={isShowingPopup}
 					onClick={this.handleClickOnOverlay}
 					style={interpolatingStyle} />}
 				</Motion>

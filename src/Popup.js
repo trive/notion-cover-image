@@ -54,22 +54,24 @@ const PopupScroll = styled.div`
 
 class Popup extends Component {
 	render() {
+		const { isVisible, hasCoverImage, selectedCategory, selectedImage, onClick, scrollRef, onRemoveClick } = this.props;
+		const { PopupScale, PopupAlreadyPresentScale, PopupClosedScale, PopupTopY, PopupAlreadyPresentTopY, PopupClosedTopY, SpringParameters, ImageCategories } = Constants;
 		const height = window.innerHeight
 		|| document.documentElement.clientHeight
 		|| document.body.clientHeight;
-		const sheetHeight = height-Constants.PopupTopY-5;
-		const popupOpacity = spring(this.props.isVisible ? 1.0 : 0.0, Constants.SpringParameters);
-		const popupScale = spring(this.props.isVisible ? Constants.PopupScale : (this.props.hasCoverImage ? Constants.PopupAlreadyPresentScale : Constants.PopupClosedScale), Constants.SpringParameters);
-		const popupTop = spring(this.props.isVisible ? Constants.PopupTopY : (this.props.hasCoverImage ? Constants.PopupAlreadyPresentTopY  : Constants.PopupClosedTopY), Constants.SpringParameters);
-		const pEvents = this.props.isVisible ? 'auto' : 'none';
-		const tailTop = spring(this.props.isVisible ? -9 : 0, Constants.SpringParameters);
-		const Sections = Constants.ImageCategories.map((category,index) =>
+		const sheetHeight = height-PopupTopY-5;
+		const popupOpacity = spring(isVisible ? 1.0 : 0.0, SpringParameters);
+		const popupScale = spring(isVisible ? PopupScale : (hasCoverImage ? PopupAlreadyPresentScale : PopupClosedScale), SpringParameters);
+		const popupTop = spring(isVisible ? PopupTopY : (hasCoverImage ? PopupAlreadyPresentTopY  : PopupClosedTopY), SpringParameters);
+		const pEvents = isVisible ? 'auto' : 'none';
+		const tailTop = spring(isVisible ? -9 : 0, SpringParameters);
+		const Sections = ImageCategories.map((category,index) =>
 			<PopupSection key={index}
 						  categoryKey={(index+1).toString()}
 						  descriptor={category}
-						  onClick={this.props.onClick}
-						  selectedImage={this.props.selectedImage}
-						  isSelectedCategory={index+1 === this.props.selectedCategory} />)
+						  onClick={onClick}
+						  selectedImage={selectedImage}
+						  isSelectedCategory={index+1 === selectedCategory} />)
 		return (
 			<React.Fragment>
 				<Motion style={{ opacity: popupOpacity,
@@ -81,9 +83,9 @@ class Popup extends Component {
 							<PopupTail style={{ top: `${value.tailTop}px` }}/>
 							<PopupContainer>
 								<PopupHeader />
-								<PopupScroll ref={this.props.scrollRef}>
+								<PopupScroll ref={scrollRef}>
 									{Sections}		
-									<RemoveButton onClick={this.props.onRemoveClick}
+									<RemoveButton onClick={onRemoveClick}
 											 	  label="Remove Cover Photo"/>
 								</PopupScroll>
 							</PopupContainer>

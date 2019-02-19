@@ -70,7 +70,7 @@ class PopupSection extends Component {
 		const Images = Constants.Numbers.map((number) =>
 			<PopupImage key={number}
 						imageKey={number.toString()}
-						src={require(Constants.PickerPath + this.props.descriptor + "/" + number.toString() + '.jpg')}
+						src={require(Constants.ThumbnailsPath + this.props.descriptor + "/" + number.toString() + '.jpg')}
 						active={this.isActive(number)}
 						onClick={() => { this.props.onClick(parseInt(this.props.categoryKey), number) }}/>)
 		return (

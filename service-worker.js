@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/notion-cover-image/precache-manifest.0925cdaa1f60668dc76e70449cebefc5.js"
+  "/notion-cover-image/precache-manifest.209c8ebf67cfb912c8069fc90fa35cbf.js"
 );
 
 workbox.clientsClaim();

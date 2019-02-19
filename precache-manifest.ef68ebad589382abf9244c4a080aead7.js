@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "8d9e1878811e44c6d3e6",
+    "revision": "70cc5394cc7f3aa22b49",
     "url": "/notion-cover-image/static/css/main.0bf96ba1.chunk.css"
   },
   {
-    "revision": "8d9e1878811e44c6d3e6",
-    "url": "/notion-cover-image/static/js/main.8d9e1878.chunk.js"
+    "revision": "70cc5394cc7f3aa22b49",
+    "url": "/notion-cover-image/static/js/main.70cc5394.chunk.js"
   },
   {
     "revision": "09c6c905660f03aab373",
@@ -388,7 +388,7 @@ self.__precacheManifest = [
     "url": "/notion-cover-image/static/media/6.2bb71ff3.jpg"
   },
   {
-    "revision": "4c0bc611226b93f412efb4cc3237dddc",
+    "revision": "9d7c5390001cd91c15da6f8d9df35639",
     "url": "/notion-cover-image/index.html"
   }
 ];

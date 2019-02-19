@@ -11,7 +11,7 @@ const PopupSectionContainer = styled.div`
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: flex-start;
-	padding: 16px;
+	padding: 3px 14px 16px 14px;
 `
 
 const PopupSectionHeaderContainer = styled.div`
@@ -26,12 +26,12 @@ const PopupSectionTitle = styled.div`
 	text-transform: uppercase;
 	font-size: 12px;
 	padding-bottom: 8px;
-	padding-left: -1px;
+	padding-left: 1px;
 `
 
 const PopupSectionMore = styled.div`
 	flex-grow: 0;
-	padding-right: -1px;
+	padding-right: 1px;
 	font-size: 12px;
 	color: ${Constants.MidGray};
 `
@@ -40,13 +40,13 @@ const PopupSectionGrid = styled.div`
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	margin-left: -10px;
-	width: 100%;
+	margin-left: -5px;
+	min-width: 100%;
 `
 
 const PopupImage = styled.img`
 	height: 59px;
-	margin-left: 10px;
+	margin-left: 5px;
 	margin-bottom: 5px;
 	border-radius: ${Constants.CornerRadius};
 	flex: 1 0 26%;

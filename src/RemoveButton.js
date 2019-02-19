@@ -56,7 +56,11 @@ class RemoveButton extends Component {
 			<RemoveButtonContainer onClick={this.props.onClick}
 								   style={{ backgroundColor : color }}
 								   onMouseDown={this.makeActive}
-								   onMouseUp={this.makeInactive}>
+								   onTouchStart={this.makeActive}
+								   onMouseUp={this.makeInactive}
+								   onTouchMove={this.makeInactive}
+								   onTouchEnd={this.makeInactive}
+								   onTouchCancel={this.makeInactive}>
 				<RemoveButtonIcon src={remove}/>
 				<RemoveButtonLabel>{this.props.label}</RemoveButtonLabel>
 			</RemoveButtonContainer>

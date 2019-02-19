@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const CoverImageContent = styled.img`
 	width:100%;
+	position: relative;
 	object-fit: cover;
 	object-position: 50% 50%;
 	z-index: ${Constants.zCoverImage};
@@ -33,17 +34,22 @@ class CoverImage extends Component {
 	}
 
 	render() {
-		var maskHeight = spring(this.props.showCoverImage ? Constants.CoverImageHeight : 0, Constants.SpringParameters);
-		var filterValue = spring(this.state.isHighlighted ? Constants.OverlayDarken : 1.0, Constants.SpringParameters);
+		const maskHeight = spring(this.props.showCoverImage ? Constants.CoverImageHeight : 0, Constants.SpringParameters);
+		const filterValue = spring(this.state.isHighlighted ? Constants.OverlayDarken : 1.0, Constants.SpringParameters);
 		return (
-			<Motion style={{height: maskHeight, filter: filterValue}}>
+			<Motion style={{height: maskHeight,
+							filter: filterValue}}>
 				{value =>
 					<CoverImageContent src={this.props.imagePath}
 									   style={{height: value.height,
 									   		   filter: `brightness(${value.filter})`}}
 									   onClick={this.props.onClick}
 									   onMouseDown={this.highlight}
-									   onMouseUp={this.dehighlight}/>
+									   onMouseUp={this.dehighlight}
+									   onTouchStart={this.highlight}
+									   onTouchMove={this.dehighlight}
+									   onTouchEnd={this.dehighlight}
+									   onTouchCancel={this.dehighlight}/>
 				}
 			</Motion>
 		);

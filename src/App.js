@@ -84,11 +84,9 @@ class App extends Component {
 
 	handleClickOnCover = (e) => {
 		console.debug('Click on cover image');
-		if (!this.state.isShowingPopup) {
-			this.setState({
-				isShowingPopup : true
-			})
-		}
+		this.setState({
+			isShowingPopup : !this.state.isShowingPopup
+		})
 	}
 
 	handleClickOnRemove = (e) => {

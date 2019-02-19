@@ -10,7 +10,7 @@ import styled from 'styled-components';
 
 const AddBarContainer = styled.div`
 	display: flex;
-	flexDirection: 'row';
+	flexDirection: row;
 	padding-left: 15px;
 	padding-top: 13px;
 	justify-content: flex-start;
@@ -25,7 +25,7 @@ const AddBarLabel = styled.div`
 
 const AddBarItemContainer = styled.div`
 	display: flex;
-	flexDirection: 'row';
+	flexDirection: row;
 	padding: 10px;
 	overflow: hidden;
 `
@@ -69,10 +69,8 @@ class AddBar extends Component {
 					<AddBarItem image={addcover}
 								label="Add Cover"
 								onClick={handleClickOnAddCover}
-								onMouseOver={handleIn}
-								onMouseDown={handleIn}
-								onMouseUp={handleOut}
-								onMouseOut={handleOut}
+								handleIn={handleIn}
+								handleOut={handleOut}
 								style={{ backgroundColor: color,
 										 borderRadius: '3px'}} />
 				}
@@ -84,15 +82,20 @@ class AddBar extends Component {
 
 class AddBarItem extends Component {
 	render() {
+		const { onClick, handleIn, handleOut, style, image, label } = this.props;
 		return (
-			<AddBarItemContainer 	onClick={this.props.onClick}
-									onMouseOver={this.props.onMouseOver}
-									onMouseDown={this.props.onMouseDown}
-									onMouseUp={this.props.onMouseUp}
-									onMouseOut={this.props.onMouseOut}
-									style={this.props.style}>
-				<AddBarIcon src={this.props.image}/>
-				<AddBarLabel>{this.props.label}</AddBarLabel>
+			<AddBarItemContainer 	onClick={onClick}
+									onMouseOver={handleIn}
+									onMouseDown={handleIn}
+									onTouchStart={handleIn}
+									onMouseUp={handleOut}
+									onMouseOut={handleOut}
+									onTouchMove={handleOut}
+									onTouchEnd={handleOut}
+									onTouchCancel={handleOut}
+									style={style}>
+				<AddBarIcon src={image}/>
+				<AddBarLabel>{label}</AddBarLabel>
 			</AddBarItemContainer>
 		);
 	}

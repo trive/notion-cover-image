@@ -40,13 +40,15 @@ const PopupContainer = styled.div`
 `
 
 const PopupScroll = styled.div`
-	flex-grow: 1;
 	height: auto;
     overflow: scroll;
-    background-color: white;
     border-radius: 0px 0px 34px 34px;
     -webkit-overflow-scrolling: touch; //inertial scrolling
-	::-webkit-scrollbar {display:none;}
+	-webkit-scrollbar {display:none;}
+	/* Weird weird trick to workaround a MobileSafari bug
+	 * https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
+	 */
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
 `
 
 
@@ -71,7 +73,7 @@ class Popup extends Component {
 						  descriptor={category}
 						  onClick={onClick}
 						  selectedImage={selectedImage}
-						  isSelectedCategory={index+1 === selectedCategory} />)
+						  isSelectedCategory={index+1 === selectedCategory}/>)
 		return (
 			<React.Fragment>
 				<Motion style={{ opacity: popupOpacity,
@@ -84,7 +86,7 @@ class Popup extends Component {
 							<PopupContainer>
 								<PopupHeader />
 								<PopupScroll ref={scrollRef}>
-									{Sections}		
+									{Sections}	
 									<RemoveButton onClick={onRemoveClick}
 											 	  label="Remove Cover Photo"/>
 								</PopupScroll>

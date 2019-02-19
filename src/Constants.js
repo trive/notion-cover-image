@@ -19,10 +19,10 @@ class Constants {
 		/* Dimensions & positions */
 		this.CoverImageHeight = 200;
 		this.PopupTopY = 238;
-		this.PopupAlreadyPresentTopY = 188;
+		this.PopupAlreadyPresentTopY = 218;
 		this.PopupClosedTopY = 38;
 		this.PopupScale = 1.0;
-		this.PopupAlreadyPresentScale = 0.95;
+		this.PopupAlreadyPresentScale = 0.98;
 		this.PopupClosedScale = 0.8;
 		this.PopupWidth = 365/375;
 

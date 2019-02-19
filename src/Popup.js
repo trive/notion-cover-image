@@ -18,6 +18,7 @@ const PopupContainer = styled.div`
     background-color: white;
     border-radius: 18px 18px 34px 34px;
     box-shadow: 0px -1px 12px rgba(0, 0, 0, .15);
+    overflow: hidden;
     z-index: ${Constants.zPopup};
 `
 
@@ -25,9 +26,10 @@ const PopupScroll = styled.div`
 	flex-grow: 1;
 	height: auto;
     overflow: scroll;
+    background-color: blue;
     border-radius: 0px 0px 34px 34px;
-	::-webkit-scrollbar {display:none;}
     -webkit-overflow-scrolling: touch; //inertial scrolling
+	::-webkit-scrollbar {display:none;}
 `
 
 

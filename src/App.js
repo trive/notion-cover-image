@@ -13,6 +13,7 @@ import styled from 'styled-components';
 
 const StyledApp = styled.div`	
  	font-size: 14px;
+ 	overflow:hidden;
 	font-family: -apple-system, BlinkMacSystemFont;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;

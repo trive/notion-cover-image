@@ -11,8 +11,8 @@ const PopupHeaderContainer = styled.div`
 	max-height: 56px;
 	display: flex;
 	flex-direction: row;
-	padding-left: 11px;
-	padding-right: 11px;
+	padding-left: 16px;
+	padding-right: 16px;
 `
 
 const PopUpHeaderIcon = styled.img`

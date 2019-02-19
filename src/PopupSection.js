@@ -11,27 +11,42 @@ const PopupSectionContainer = styled.div`
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: flex-start;
-	padding: 11px;
+	padding: 16px;
+`
+
+const PopupSectionHeaderContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	width: 100%;
 `
 
 const PopupSectionTitle = styled.div`
+	flex-grow: 1;
 	text-transform: uppercase;
 	font-size: 12px;
-	padding-bottom: 10px;
-	padding-left: -3px;
+	padding-bottom: 8px;
+	padding-left: -1px;
+`
+
+const PopupSectionMore = styled.div`
+	flex-grow: 0;
+	padding-right: -1px;
+	font-size: 12px;
+	color: ${Constants.MidGray};
 `
 
 const PopupSectionGrid = styled.div`
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	margin: 0 -2.5px;
+	margin-left: -10px;
 	width: 100%;
 `
 
 const PopupImage = styled.img`
 	height: 59px;
-	margin: 0 2.5px;
+	margin-left: 10px;
 	margin-bottom: 5px;
 	border-radius: ${Constants.CornerRadius};
 	flex: 1 0 26%;
@@ -60,7 +75,10 @@ class PopupSection extends Component {
 						onClick={() => { this.props.onClick(parseInt(this.props.categoryKey), number) }}/>)
 		return (
 			<PopupSectionContainer>
-				<PopupSectionTitle>{this.props.descriptor}</PopupSectionTitle>
+				<PopupSectionHeaderContainer>
+					<PopupSectionTitle>{this.props.descriptor}</PopupSectionTitle>
+					<PopupSectionMore>Show More</PopupSectionMore>
+				</PopupSectionHeaderContainer>
 				<PopupSectionGrid>
 					{Images}
 				</PopupSectionGrid>

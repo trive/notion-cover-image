@@ -13,8 +13,8 @@ const PopupContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	position: fixed;
-	width: 97.3%;
-	margin-left: 1.35%;
+	width: 97.334%;
+	margin-left: 1.334%;
     background-color: white;
     border-radius: 18px 18px 34px 34px;
     box-shadow: 0px -1px 12px rgba(0, 0, 0, .15);
@@ -40,7 +40,7 @@ class Popup extends Component {
 		|| document.body.clientHeight;
 		var sheetHeight = height-Constants.PopupTopY-5;
 		var popupOpacity = spring(this.props.isVisible ? 1.0 : 0.0, Constants.SpringParameters);
-		var popupScale = spring(this.props.isVisible ? Constants.PopupScale : Constants.PopupClosedScale, Constants.SpringParameters);
+		var popupScale = spring(this.props.isVisible ? Constants.PopupScale : (this.props.hasCoverImage ? Constants.PopupAlreadyPresentScale : Constants.PopupClosedScale), Constants.SpringParameters);
 		var popupTop = spring(this.props.isVisible ? Constants.PopupTopY : (this.props.hasCoverImage ? Constants.PopupAlreadyPresentTopY : Constants.PopupClosedTopY), Constants.SpringParameters);
 		var pEvents = this.props.isVisible ? 'auto' : 'none';
 		var Sections = Constants.ImageCategories.map((category,index) =>
@@ -58,7 +58,7 @@ class Popup extends Component {
 					{value =>
 						<PopupContainer style={{ pointerEvents : pEvents, height: sheetHeight, opacity: value.opacity, top: value.top, transform: `scale(${value.scale})`}}>
 							<PopupHeader />
-								<PopupScroll>
+								<PopupScroll ref={this.props.scrollRef}>
 									{Sections}		
 									<RemoveButton onClick={this.props.onRemoveClick}
 											 	  label="Remove Cover Photo"/>

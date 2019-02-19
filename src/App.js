@@ -43,10 +43,11 @@ class App extends Component {
 
 	constructor(props) {
 		super(props);
+		this.scrollRef = React.createRef();
 		// State
 		this.state = {
-			isShowingPopup : false,
-			hasCoverImage : false,
+			isShowingPopup : true,
+			hasCoverImage : true,
 			selectedCategory : 2,   // Default
 			selectedImage : 4		// Default
 		}
@@ -56,6 +57,7 @@ class App extends Component {
 
 	handleClickOnAddCover = (e) => {
 		console.debug('Click on add cover');
+		this.scrollRef.current.scrollTop = 0;
 		this.setState({
 			isShowingPopup : !this.state.isShowingPopup,
 			hasCoverImage : true
@@ -107,7 +109,8 @@ class App extends Component {
 				<AddBar addCoverHandler={this.handleClickOnAddCover}
 						showAddCover={!this.state.hasCoverImage} />
 				<Content>Travel List</Content>
-				<Popup isVisible={this.state.isShowingPopup}
+				<Popup scrollRef={this.scrollRef}
+					   isVisible={this.state.isShowingPopup}
 					   hasCoverImage={this.state.hasCoverImage}
 					   selectedCategory={this.state.selectedCategory}
 					   selectedImage={this.state.selectedImage}

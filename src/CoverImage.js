@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const CoverImageContent = styled.img`
 	width:100%;
+	display: block;
 	position: relative;
 	object-fit: cover;
 	object-position: 50% 50%;
